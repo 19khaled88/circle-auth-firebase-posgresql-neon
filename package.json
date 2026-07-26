@@ -1,0 +1,28 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@apollo/subgraph": "^2.14.3",
+    "@prisma/client": "^7.9.0",
+    "dotenv": "^17.4.2",
+    "firebase-admin": "^14.2.0",
+    "graphql": "^16.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "prisma": "^7.9.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^7.0.2"
+  }
+}
