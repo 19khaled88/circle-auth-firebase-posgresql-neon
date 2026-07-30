@@ -1,5 +1,5 @@
-import prisma from "../cnofig/prisma.js";
-import { auth } from "../cnofig/firebaseAdmin.js";
+import prisma from "../config/prisma.js";
+import { auth } from "../config/firebaseAdmin.js";
 
 export interface Context {
   prisma: typeof prisma;
