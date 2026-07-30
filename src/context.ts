@@ -16,6 +16,8 @@ export async function createContext({req}:{req:any}){
 
         let user = await prisma.user.findUnique({where: {firebaseUid: decoded.uid}});
 
+        
+
         if(!user){
             user = await prisma.user.create({
                 data:{
@@ -30,8 +32,12 @@ export async function createContext({req}:{req:any}){
             return {user:null};
         }
         return { user };
-    } catch (error) {
-        console.error('Token verification failed:',error);
-        return { user : null };
+    } catch (error:any) {
+        if (error.code === 'ETIMEDOUT' || error.code === 'P1001') {
+            console.error('Database connection issue:', error);
+        } else {
+            console.error('Token verification failed:', error);
+        }
+        return { user: null };
     }
 }

@@ -5,10 +5,13 @@ import { createContext } from "./context.js";
 import {typeDefs} from './graphql/schema.js';
 import { resolvers } from "./graphql/resolvers.js";
 import type { User } from "./generated/prisma/client.js";
+import dotenv from 'dotenv'
 
-interface Context{
-    user: User | null;
-}
+dotenv.config();
+
+// interface Context{
+//     user: User | null;
+// }
 
 async function start(){
    
