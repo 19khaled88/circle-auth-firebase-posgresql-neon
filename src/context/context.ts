@@ -31,9 +31,9 @@ export async function createContext({ req }: any): Promise<Context> {
       user = await prisma.user.create({
         data: {
           firebaseUid: decoded.uid,
-          email: decoded.email!,
-          name: decoded.name ?? "",
-          avatarUrl: decoded.picture,
+          email: decoded.email || '',
+          name: decoded.name || decoded.email?.split('@')[0] || 'New User',
+          avatarUrl: decoded.picture ?? null,
         },
       });
     }
