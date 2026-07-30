@@ -6,6 +6,7 @@ export const typeDefs = gql`
 
     type User @key(fields:"id"){
         id: ID!
+        firebaseUid: String!
         email:String!
         name:String!
         avatarUrl:String
@@ -13,6 +14,7 @@ export const typeDefs = gql`
         role:String!
         isActive:Boolean!
         createdAt:String!
+        updatedAt: String!
     }
 
     type Query {
